@@ -10,22 +10,31 @@
 %   x = the rate the popluation grows                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function logMap = Project1_Part1(population,R,x)
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%          Logistic map equation            %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-x(1) = x;
-for n = 1: population - 1
-     x(n +1) = R * x(n) * (1-x(n));  
-     logMap = x;
-end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Global variables   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+population = 50;
+
+x = 0.2;
+
+R = 2.0;
+R2 = 3.49;
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %            Graph function's                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%% fixed point labeling %%%%%%%%
+%%%%%%% fixed point Graph %%%%%%%%
+
+x(1) = x;
+for n = 1: population - 1
+     x(n +1) = R * x(n) * (1-x(n));  
+     
+     
+end
+
 plot(1:population,x,'-r','Marker','square','MarkerIndices',5)
 ylabel('x(t)');
 xlabel('t');
@@ -36,5 +45,15 @@ y1 = 0.49;
 txt1 = '\uparrow Fixed Point';
 text(x1,y1,txt1)
 
+%%%%%% periodic cyle Graph %%%%%
+hold on
+x(1) = 0.2
 
+for n = 1: population - 1
+     x(n +1) = R2 * x(n) * (1-x(n));     
 end
+plot(1:population,x,'-g','Marker','square','MarkerIndices',5)
+
+
+
+
