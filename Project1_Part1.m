@@ -1,25 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Code inspired from : http://www.mas.ncl.ac.uk/~ncfb/mat3.pdf %
-% What i did that is new:                                      %
-% *PreAllocated the for loop speed went from                   %
-%  0.000683 seconds. to 0.000121 seconds.                      %
-%                                                              %
-% * make a function that allows you to define:                 %
-%   R = death and birth rate                                   %
-%   population = the size of the popluation                    %
-%   x = the rate the popluation grows                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Global variables   %
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Global variables        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 population = 50;
 
 x = 0.2;
 
-R = 2.0;
-R2 = 3.49;
+R = 2.0; %% fixed point value
+R2 = 3.49; %% periodic cycle
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
