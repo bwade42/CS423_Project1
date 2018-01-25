@@ -11,6 +11,7 @@ x = 0.2;
 
 R = 2.0; %% fixed point value
 R2 = 3.49; %% periodic cycle
+R3 = 3.9;  %chaotic
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,25 +27,33 @@ for n = 1: population - 1
      
 end
 
-plot(1:population,x,'-r','Marker','square','MarkerIndices',5)
+plot(1:population,x,'-r','Marker','square','MarkerIndices',1:50)
 ylabel('x(t)');
 xlabel('t');
-title('Figure 1: Time Steps = 50, R=2.0 , X0 = 0.2'); %% fixed point
-legend('Fixed Point with X0 = 0.2')
-x1 = 5;
-y1 = 0.49;
-txt1 = '\uparrow Fixed Point';
-text(x1,y1,txt1)
+title1 = ['Figure 1: Shows population vs time for 50 time steps with' ...
+    'R values of 2.0, 3.49 and 3.9'];
+title(title1); 
 
 %%%%%% periodic cyle Graph %%%%%
 hold on
-x(1) = 0.2
+x(1) = 0.2;
 
 for n = 1: population - 1
      x(n +1) = R2 * x(n) * (1-x(n));     
 end
-plot(1:population,x,'-g','Marker','square','MarkerIndices',5)
+plot(1:population,x,'-g','Marker','square','MarkerIndices',1:50)
 
 
+%%%%%% chaotic Graph %%%%%
+hold on
+x(1) = 0.2;
+
+for n = 1: population - 1
+     x(n +1) = R3 * x(n) * (1-x(n));     
+end
+plot(1:population,x,'-b','Marker','square','MarkerIndices',1:50);
+
+legend('Fixed Point with X0 = 0.2','Periodic with X0 = 0.2'...
+    ,'Chaotic with X0 = 0.2','Location','southeast');
 
 
