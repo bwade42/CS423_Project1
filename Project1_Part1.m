@@ -20,11 +20,21 @@ for n = 1: population - 1
      x(n +1) = R * x(n) * (1-x(n));  
      logMap = x;
 end
-plot(1:population,x);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %            Graph function's                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% fixed point labeling %%%%%%%%
+plot(1:population,x,'-r','Marker','square','MarkerIndices',5)
 ylabel('x(t)');
 xlabel('t');
-title('R=2.5'); %% fixed point
+title('Figure 1: Time Steps = 50, R=2.0 , X0 = 0.2'); %% fixed point
+legend('Fixed Point with X0 = 0.2')
+x1 = 5;
+y1 = 0.49;
+txt1 = '\uparrow Fixed Point';
+text(x1,y1,txt1)
+
+
 end
